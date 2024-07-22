@@ -18,27 +18,27 @@
  5. Драйвер предоставляет возможность получить информацию о последней операции записи и чтения через вызов ioctl.
 
 ## Структура проекта
- char_driver</br>
- |</br>
- |-- Makefile</br>
- |</br>
- |-- chr_driver.c</br>
- |</br>
- |-- README.md</br>
- |</br>
- |-- samples</br>
-     |</br>
-     |-- sample_changing_io_mode</br>
-         |</br>
-         |-- test_read.c</br>
-         |</br>
-         |-- test_write.c</br>
-     |</br>
-     |-- sample_last_op_info</br>
-         |</br>
-         |-- test_read.c</br>
-         |</br>
-         |-- test_write.c</br>
+char_driver</br>
+|</br>
+|-- Makefile</br>
+|</br>
+|-- chr_driver.c</br>
+|</br>
+|-- README.md</br>
+|</br>
+|-- samples</br>
+&emsp|</br>
+&emsp|-- sample_changing_io_mode</br>
+&emsp &emsp|</br>
+        |-- test_read.c</br>
+        |</br>
+        |-- test_write.c</br>
+    |</br>
+    |-- sample_last_op_info</br>
+        |</br>
+        |-- test_read.c</br>
+        |</br>
+        |-- test_write.c</br>
 
  - `chr_driver.c` - файл с исходным кодом драйвера.
  - `Makefile` - файл, содержащий инструкции по сборке драйвера.
