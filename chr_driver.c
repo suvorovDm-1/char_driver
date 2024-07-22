@@ -97,6 +97,7 @@ static int __init my_char_driver_init(void) {
     }
     printk(KERN_INFO "The major number <%d> and the minor number <%d> for the device '%s' has been successfully registered\n", 
            MAJOR(dev_nums), MINOR(dev_nums), DEV_NAME);
+    printk(KERN_INFO "Device buffer size is equal to %d\n", r_buf->size);
 
     // init and add to the system struct cdev
     cdev_init(&my_char_dev, &fops);

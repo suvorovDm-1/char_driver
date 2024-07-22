@@ -52,7 +52,7 @@ git clone https://github.com/suvorovDm-1/char_driver.git
 ```bash
 cd char_driver
 make
-sudo insmod chr_driver.ko
+sudo insmod chr_driver.ko [buffer_size=4096]
 dmesg | tail 
 sudo mknod /dev/my_char_device c <major number> <minor number>
 sudo chmod 666 /dev/my_char_device
@@ -99,8 +99,9 @@ Last read op user id: 1001
 Last write op user id: 1001
 ```
 
-## Отчистка (удаление модуля и устройства)
+## Отчистка (удаление модуля и устройства и отчиска проекта)
 ```bash
 sudo rmmod chr_driver
 sudo rm /dev/my_char_device
+make clean
 ```
