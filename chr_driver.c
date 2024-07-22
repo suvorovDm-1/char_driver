@@ -14,7 +14,7 @@
 #define DEV_NAME "my_char_driver"
 #define INITIAL_BUFFER_SIZE 512
 #define IOCTL_SET_IO_MODE _IOW('a', 1, int*)
-#define IOCTL_GET_LAST_OP_INFO _IOR('a', 2, struct last_op_info*)
+#define IOCTL_GET_LAST_OP_INFO _IOR('a', 2, struct last_operation_info*)
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Suvorov Dmitriy dim-suv@mail.ru");
@@ -272,7 +272,7 @@ static long int c_dev_ioctl(struct file* file_p, unsigned int cmd, unsigned long
             break;
         case IOCTL_GET_LAST_OP_INFO:
             local_info = rw_info;
-            if (copy_to_user((struct last_op_info*)arg, &local_info, sizeof(local_info))) {
+            if (copy_to_user((struct last_operation_info*)arg, &local_info, sizeof(local_info))) {
                 return -EFAULT;
             }
             break;
